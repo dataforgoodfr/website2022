@@ -22,17 +22,17 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg button-home"
             to="/docs">
-            Rejoindre la communauté
+            💪 Rejoindre la communauté
           </Link>
           <Link
             className="button button--secondary button--lg button-home"
             to="/docs">
-            Proposer un projet
+            💡 Proposer un projet
           </Link>
           <Link
             className="button button--secondary button--lg button-home"
             to="/docs">
-            Découvrir l'association
+            🌎 Découvrir l'association
           </Link>
         </div>
       </div>
