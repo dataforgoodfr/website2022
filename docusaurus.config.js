@@ -15,7 +15,26 @@ const config = {
   favicon: 'img/logo-dfg-new.png',
   organizationName: 'dataforgoodfr', // Usually your GitHub org/user name.
   projectName: 'dataforgoodfr.github.io', // Usually your repo name.
-
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'projects',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'projects',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './projects',
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -55,10 +74,10 @@ const config = {
             position: 'left',
             label: "🌎 Qui sommes-nous ?",
           },
-          {to: '/blog', label: '🔥 Projets', position: 'left'},
-          {to: '/blog', label: '💪 Rejoindre la communauté', position: 'right'},
-          {to: '/blog', label: '💡 Proposer un projet', position: 'right'},
+          {to: '/projects', label: '🔥 Projets', position: 'left'},
           {to: '/blog', label: '📚 Blog', position: 'left'},
+          {to: '/join', label: '💪 Rejoindre la communauté', position: 'right'},
+          {to: '/propose', label: '💡 Proposer un projet', position: 'right'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
