@@ -4,42 +4,50 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Notre vision',
+    src: require('../../static/img/pillar1.png').default,
+    Svg: require('../../static/img/pillar1.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        <p style={{"text-align":"left"}}>Les technologies numériques sont incroyablement puissantes et redéfinissent le fonctionnement de notre société. Mais tous les domaines ne se transforment pas à la même vitesse. Très souvent, les acteurs qui œuvrent pour l'intérêt général* sont en retard par rapport aux startups et aux géants de la tech. Data for Good existe pour rétablir l'équilibre.</p>
+        <p style={{"text-align":"left"}}>* citoyens, associations, institutions publiques et entreprises à fort impact social.</p>
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Notre mission',
+    src: require('../../static/img/pillar2.png').default,
+    Svg: require('../../static/img/pillar2.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        <p style={{"text-align":"left"}}>Chaque jour, de nouveaux défis sont à relever en matière de <b>santé, d'environnement, d'inclusion sociale, d'éducation ou de citoyenneté</b>. Et chaque jour, de nouvelles idées germent et de plus en plus de citoyens veulent s'engager.</p>
+        <p style={{"text-align":"left"}}>La communauté Data for Good rassemble celles et ceux qui veulent façonner des projets concrets et sur mesure en réponse à ces défis. Elle offre un cadre vivant et bienveillant où ces projets éclosent, mûrissent et se déploient.</p>
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: 'Nos valeurs',
+    src: require('../../static/img/pillar3.png').default,
+    Svg: require('../../static/img/pillar3.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        <ul style={{"text-align":"left"}}>
+          <li><b>Des optimistes pragmatiques</b> – qui s'engagent à résoudre de vrais problèmes à travers une méthode d'accompagnement ascendante et itérative.</li>
+          <li><b>Des artisans de l'open source</b> – qui veulent que les progrès des uns puissent être réutilisés pour faire avancer les autres. Tout contenu produit au sein des projets (code, visuels, documentation, etc.) est publié sous une licence libre.</li>
+          <li><b>Des hackers indépendants</b> – qui ont choisi d'être 100% bénévoles pour conserver toute liberté dans leur prise de décisions.</li>
+          <li><b>Un collectif de bâtisseurs</b> – qui ont conscience que la technologie n'est pas la réponse à tout, mais qui veulent construire brique par brique le monde de demain.</li>
+        </ul>
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description,src}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
+        <img src={src} className={styles.featureSvg}/>
+        {/* <Svg className={styles.featureSvg} alt={title} /> */}
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
