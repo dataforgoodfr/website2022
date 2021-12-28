@@ -16,6 +16,7 @@ const config = {
   organizationName: 'dataforgoodfr', // Usually your GitHub org/user name.
   projectName: 'dataforgoodfr.github.io', // Usually your repo name.
   plugins: [
+    require.resolve('docusaurus-lunr-search'),
     [
       '@docusaurus/plugin-content-blog',
       {
