@@ -13,6 +13,7 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import MDXComponents from '@theme/MDXComponents';
 import type {Props} from '@theme/BlogPostItem';
+import Admonition from '@theme/Admonition';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import styles from './styles.module.css';
@@ -40,8 +41,12 @@ function BlogPostItem(props: Props): JSX.Element {
     truncated,
     isBlogPostPage = false,
   } = props;
+
   const {date, permalink, tags, readingTime} = metadata;
   const {author, title, image, keywords,description} = frontMatter;
+
+  const isBlog = permalink.slice(0,5) === "/blog";
+  console.log(title,isBlog);
 
   const authorURL = frontMatter.author_url || frontMatter.authorURL;
   const authorTitle = frontMatter.author_title || frontMatter.authorTitle;
@@ -68,10 +73,15 @@ function BlogPostItem(props: Props): JSX.Element {
         </TitleHeading>
         <div className="margin-vert--md">
           {description && <p>{description}</p>}
-          <time dateTime={date} className={styles.blogPostDate}>
-            {month} {day}, {year}{' '}
-            {readingTime && <> · {Math.ceil(readingTime)} min read</>}
-          </time>
+          {
+            isBlog && (
+              <time dateTime={date} className={styles.blogPostDate}>
+                {month} {day}, {year}{' '}
+                {readingTime && <> · {Math.ceil(readingTime)} min read</>}
+              </time>
+            )
+          }
+
         </div>
         <div className="avatar margin-vert--md">
           {authorImageURL && (
@@ -97,6 +107,22 @@ function BlogPostItem(props: Props): JSX.Element {
         <div className="margin-vert--md">
           <img className="img-blog-header" src={headerImageURL}/>
         </div>
+        {
+          isBlog === false && (
+            <div>
+              <Admonition type="info" title="LIENS IMPORTANTS">
+                <p>
+                  <ul>
+                    {frontMatter.github && (<li>GitHub - {frontMatter.github}</li>)}
+                    {frontMatter.slack && (<li>Slack channel - {frontMatter.slack}</li>)}
+                    {frontMatter.website && (<li>Website - {frontMatter.website}</li>)}
+                  </ul>
+                </p>
+              </Admonition>
+            </div>
+          )
+        }
+
       </header>
     );
   };

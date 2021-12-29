@@ -50,6 +50,7 @@ function BlogPostPreview(props: Props): JSX.Element {
   const authorImageURL =
     frontMatter.author_image_url || frontMatter.authorImageURL;
   const imageUrl = useBaseUrl(image, {absolute: true});
+  const isBlog = permalink.slice(0,5) === "/blog";
 
   const renderPostHeader = () => {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
@@ -82,6 +83,7 @@ function BlogPostPreview(props: Props): JSX.Element {
               <img src={authorImageURL} alt={author} />
             </a>
           )}
+          { isBlog && (
           <div className="avatar__intro">
             {author && (
               <>
@@ -98,6 +100,8 @@ function BlogPostPreview(props: Props): JSX.Element {
               </>
             )}
           </div>
+          )}
+
         </div>
       </header>
     );
