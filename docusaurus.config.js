@@ -12,9 +12,10 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  deploymentBranch:"main",
   favicon: 'img/logo-dfg-new.png',
   organizationName: 'dataforgoodfr', // Usually your GitHub org/user name.
-  projectName: 'dataforgoodfr.github.io', // Usually your repo name.
+  projectName: 'website2022', // Usually your repo name.
   plugins: [
     require.resolve('docusaurus-lunr-search'),
     [

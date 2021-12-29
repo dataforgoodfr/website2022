@@ -21,17 +21,17 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg button-home"
-            to="/docs">
+            to="/docs/dataforgood">
             💪 Rejoindre la communauté
           </Link>
           <Link
             className="button button--secondary button--lg button-home"
-            to="/docs">
+            to="/docs/dataforgood">
             💡 Proposer un projet
           </Link>
           <Link
             className="button button--secondary button--lg button-home"
-            to="/docs">
+            to="/docs/dataforgood">
             🌎 Découvrir l'association
           </Link>
         </div>
