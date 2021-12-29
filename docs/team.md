@@ -8,7 +8,7 @@ title: L'équipe
 ![](./img/team.png)
 
 ## Marty
-XX
+Marty est notre mascotte et logo martin-pécheur. En effet, la présence nombreuse de martin-pécheurs est symptomatique de la santé d'un écosystème. C'est ce que la communauté Data For Good souhaite représenter dans l'écosystème tech : un engagement fort pour utiliser le numérique pour l'intérêt général de façon responsable et sans techno-solutionnisme forcé.
 
 ## Contact
 Pour contacter l'équipe Data For Good, vous pouvez : 
