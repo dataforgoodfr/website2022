@@ -71,7 +71,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'dataforgood',
             position: 'left',
             label: "🌎 Qui sommes-nous ?",
           },
@@ -80,26 +80,26 @@ const config = {
           {to: '/join', label: '💪 Rejoindre la communauté', position: 'right'},
           {to: '/propose', label: '💡 Proposer un projet', position: 'right'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://dataforgood.slite.com/p/channel/F9UR6bhuYCPAtvfLDje8Zc/notes/p8MSVDq6k',
+            label: 'FAQ',
             position: 'right',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'Slack',
+            href: 'https://github.com/dataforgoodfr',
+            label: 'GitHub',
             position: 'right',
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: "L'association Data For Good",
+                to: '/docs/dataforgood',
               },
             ],
           },
@@ -107,16 +107,20 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'GitHub',
+                href: 'https://github.com/dataforgoodfr',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Youtube',
+                href: 'https://www.youtube.com/channel/UCA_utdbmVhAOFujulWlaaCQ',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Meetup',
+                href: 'https://www.meetup.com/Data-for-Good-FR',
+              },
+              {
+                label: 'Twitch',
+                href: 'https://twitch.tv/dataforgood',
               },
             ],
           },
@@ -128,13 +132,17 @@ const config = {
                 to: '/blog',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Twitter',
+                href: 'https://twitter.com/dataforgood_fr',
+              },
+              {
+                label: 'Linkedin',
+                href: 'https://www.linkedin.com/company/dataforgood',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Data For Good - Avec amour depuis 2014 ❤`,
       },
       prism: {
         theme: lightCodeTheme,

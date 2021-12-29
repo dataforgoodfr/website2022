@@ -15,7 +15,7 @@ function HomepageHeader() {
       style={{backgroundImage:`url(${useBaseUrl('img/headerdfg.jpg')})`,backgroundSize:"cover",backgroundPosition: "bottom", minHeight:"calc(100vh - 60px)",zIndex:-1}}
     >
       <div className="container" >
-        <img src={`${useBaseUrl('img/logo-dfg-new.png')}`} style={{width:150}}/>
+        <img src={`${useBaseUrl('img/logo-dfg-new2.png')}`} style={{width:200,"margin-bottom":0}}/>
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>

@@ -1,1 +1,0 @@
-# 💪 Rejoindre la communauté Data For Good
