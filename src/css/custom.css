@@ -82,6 +82,7 @@ body{
 
 
 
+
 .img-blog-header{
   width:75%;
   margin-left: auto;
@@ -158,12 +159,21 @@ body{
 
 .badge.badge--primary{
   margin-right:5px;
-  color:black;
 }
 
 .badge{
-  font-size:70%
+  font-size:70%;
+  border:none !important;
 }
+
+.badge.badge-season{
+  background-color:#efad28 !important;
+}
+
+.badge.badge-season > a {
+  /* color: black !important; */
+}
+
 
 .badge.badge--primary > a{
   color:white;

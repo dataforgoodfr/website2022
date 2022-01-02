@@ -78,6 +78,7 @@ const config = {
           },
           {to: '/projects', label: '🔥 Projets', position: 'left'},
           {to: '/blog', label: '📚 Blog', position: 'left'},
+          {to: '/hippocrate', label: "⚕ Serment d'Hippocrate", position: 'left'},
           {to: '/join', label: '💪 Rejoindre la communauté', position: 'right'},
           {to: '/propose', label: '💡 Proposer un projet', position: 'right'},
           {
@@ -143,7 +144,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Data For Good - Avec amour depuis 2014 ❤`,
+        copyright: `Copyright © ${new Date().getFullYear()} Data For Good - Avec amour depuis 2014 ❤ - contact à hellodataforgood@gmail.com`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -141,7 +141,7 @@ function BlogPostPreview(props: Props): JSX.Element {
               <div className="col">
                 {/* <strong>Tags:</strong> */}
                 {tags.map(({label, permalink: tagPermalink}) => (
-                  <span className="badge badge--primary">
+                  <span className={`badge badge--primary ${(label.toLowerCase().slice(0,6) === "saison" || label.toLowerCase().slice(0,7) === "monthly") ? "badge-season" : ""}`}>
                   <Link
                     key={tagPermalink}
                     to={tagPermalink}>
