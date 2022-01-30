@@ -32,6 +32,45 @@ const MONTHS = [
   'December',
 ];
 
+
+
+const MagicTag = ({tagLabel,tagPermalink}) => {
+
+  let badgeClass;
+  if (tagLabel.toLowerCase().slice(0,6) === "saison" || tagLabel.toLowerCase().slice(0,7) === "monthly"){
+    badgeClass = "badge-season";
+  } else if (tagLabel === "Actif"){
+    badgeClass = "badge-active";
+  } else {
+    badgeClass = "";
+  }
+  return (
+    <span className={`badge badge--primary ${badgeClass}`}>
+      <Link
+        key={tagPermalink}
+        to={tagPermalink}>
+        {tagLabel}
+      </Link>
+    </span>
+  )
+}
+
+const MagicSDG = ({tagLabel}) => {
+  let sdgNumber = tagLabel.slice(3,)
+  let sdgPath = useBaseUrl(`img/sdgs/E-WEB-Goal-${sdgNumber}.png`);
+  let tagPermalink = `projects/tags/sdg-${sdgNumber}`;
+  return (
+    <Link
+      key={tagPermalink}
+      to={tagPermalink}>
+      <img src={sdgPath} className="sdg-icon"/>
+    </Link>
+  )
+}
+
+
+
+
 function BlogPostPreview(props: Props): JSX.Element {
   const {
     children,
@@ -136,18 +175,13 @@ function BlogPostPreview(props: Props): JSX.Element {
           <MDXProvider components={MDXComponents}>{children}</MDXProvider>
         </section> */}
         {(tags.length > 0 || truncated) && (
-          <footer className="row margin-vert--sm">
+          <footer className="margin-vert--sm">
+            <div className="row">
             {tags.length > 0 && (
               <div className="col">
                 {/* <strong>Tags:</strong> */}
                 {tags.map(({label, permalink: tagPermalink}) => (
-                  <span className={`badge badge--primary ${(label.toLowerCase().slice(0,6) === "saison" || label.toLowerCase().slice(0,7) === "monthly") ? "badge-season" : ""}`}>
-                  <Link
-                    key={tagPermalink}
-                    to={tagPermalink}>
-                    {label}
-                  </Link>
-                  </span>
+                  (label.slice(0,3) !== "sdg" && <MagicTag tagLabel={label} tagPermalink={tagPermalink}/>)
                 ))}
               </div>
             )}
@@ -160,6 +194,12 @@ function BlogPostPreview(props: Props): JSX.Element {
                 </Link>
               </div>
             )} */}
+            </div>
+            { frontMatter.sdgs && (
+              <div className="row sdgs-wrapper">
+                {frontMatter.sdgs.sort().map(el => (<MagicSDG tagLabel={el}/>))}
+              </div>
+            )}
           </footer>
         )}
       </article>

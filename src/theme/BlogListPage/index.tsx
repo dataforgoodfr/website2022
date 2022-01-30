@@ -33,6 +33,22 @@ function BlogListPage(props: Props): JSX.Element {
             <BlogSidebar sidebar={sidebar} />
           </div> */}
           <main className="col col--12">
+            {/* <h1>A la une</h1>
+            <div className="row">
+            {items.map(({content: BlogPostContent}) => {
+              return (
+                <div className="col col--4 row-preview">
+                <BlogPostPreview
+                  key={BlogPostContent.metadata.permalink}
+                  frontMatter={BlogPostContent.frontMatter}
+                  metadata={BlogPostContent.metadata}
+                  truncated={BlogPostContent.metadata.truncated}>
+                  <BlogPostContent />
+                </BlogPostPreview>
+                </div>
+              )
+            })}
+            </div> */}
             <div className="row">
             {items.map(({content: BlogPostContent}) => (
               <div className="col col--4 row-preview">

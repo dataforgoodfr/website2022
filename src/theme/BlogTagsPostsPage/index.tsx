@@ -34,14 +34,14 @@ function BlogTagsPostPage(props: Props): JSX.Element {
           </div> */}
           <main className="col col--12">
             <h1>
-              {count} {pluralize(count, 'post')} tagged with &quot;{tagName}
+              {count} {pluralize(count, 'résultat')} avec le tag &quot;{tagName}
               &quot;
             </h1>
-            <Link href={allTagsPath}>View All Tags</Link>
+            <Link href={allTagsPath}>Explorer tous les tags</Link>
             <div className="margin-vert--xl">
               <div className="row">
               {items.map(({content: BlogPostContent}) => (
-                <div className="col col--4">
+                <div className="col col--4 row-preview">
                 <BlogPostPreview
                   key={BlogPostContent.metadata.permalink}
                   frontMatter={BlogPostContent.frontMatter}

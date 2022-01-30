@@ -33,6 +33,20 @@ const MONTHS = [
   'December',
 ];
 
+const MagicSDGBig = ({tagLabel}) => {
+  let sdgNumber = tagLabel.slice(3,)
+  let sdgPath = useBaseUrl(`img/sdgs/E-WEB-Goal-${sdgNumber}.png`);
+  let tagPermalink = `tags/sdg-${sdgNumber}`;
+  return (
+    <Link
+      key={tagPermalink}
+      to={tagPermalink}>
+      <img src={sdgPath} className="sdg-icon-big"/>
+    </Link>
+  )
+}
+
+
 function BlogPostItem(props: Props): JSX.Element {
   const {
     children,
@@ -109,16 +123,27 @@ function BlogPostItem(props: Props): JSX.Element {
         </div>
         {
           isBlog === false && (
+
             <div>
-              <Admonition type="info" title="LIENS IMPORTANTS">
-                <p>
-                  <ul>
-                    {frontMatter.github && (<li>GitHub - {frontMatter.github}</li>)}
-                    {frontMatter.slack && (<li>Slack channel - {frontMatter.slack}</li>)}
-                    {frontMatter.website && (<li>Website - {frontMatter.website}</li>)}
-                  </ul>
-                </p>
-              </Admonition>
+              
+              { frontMatter.sdgs && (
+                <div className="row sdgs-wrapper">
+                  {frontMatter.sdgs.sort().map(el => (<MagicSDGBig tagLabel={el}/>))}
+                </div>
+              )}
+
+              <div className="">
+                <Admonition type="info" title="A RETENIR">
+                  <p>
+                    <ul>
+                      <li>Projet - {frontMatter.title}</li>
+                      {frontMatter.github && (<li>GitHub - {frontMatter.github}</li>)}
+                      {frontMatter.slack && (<li>Slack channel - {frontMatter.slack}</li>)}
+                      {frontMatter.website && (<li>Website - {frontMatter.website}</li>)}
+                    </ul>
+                  </p>
+                </Admonition>
+              </div>
             </div>
           )
         }
